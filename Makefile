@@ -10,7 +10,8 @@ compile: $(HELLO_WORLD)/main.S $(HELLO_WORLD)/link.ld
 		ld --oformat binary -o $(IMG)/main.img -T $(HELLO_WORLD)/link.ld $(HELLO_WORLD)/main.o
 
 run:
-	qemu-system-x86_64 -hda $(IMG)/main.img
+	qemu-system-x86_64 -fda $(IMG)/main.img -s -S -monitor stdio
+	# qemu-system-x86_64 -hda $(IMG)/main.img
 
 clean:
 	rm  -Rf ./$(IMG)/

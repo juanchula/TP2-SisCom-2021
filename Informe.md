@@ -2,7 +2,11 @@
 
 ### 1.1) ¿Qué es UEFI? ¿como puedo usarlo? Mencionar además una función a la que podría llamar usando esa dinámica.
 
+> UEFI (Unified Extensible Firmware Interface) es el remplazo de la BIOS. De modo simplificado, es una especificacion que define una interfaz entre el sistema operativo y el firmware. 
+
 ### 1.2) ¿Menciona casos de bugs de UEFI que puedan ser explotados?
+
+>Tema de claves privadas. Es muy grande
 
 ### 1.3) ¿Qué es Converged Security and Management Engine (CSME), the Intel Management Engine BIOS Extension (Intel MEBx)?
 

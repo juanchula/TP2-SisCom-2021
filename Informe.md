@@ -74,9 +74,14 @@
 
 ### 2.1) ¿Que es un linker? ¿que hace? 
 
-
+- Es un programa que toma como entrada un conjunto de archivos object (generados por el compilador) y librerías,
+y los combina en un único archivo ejecutable, libería u otro archivo objetct.
+- También se encarga de la ubicación y tabla de símbolos de cada módulo.
 ### 2.2) ¿Que es la dirección que aparece en el script del linker?¿Porqué es necesaria?
 
+Le indica al linker que al linkear el código, lo ubique en la posición 0x7c00.
+Es necesaria porque es la dirección de memoria en la que la BIOS carga el MBR.
+Es un número mágico que quedo de los tiempos de IBM por retrocompatibilidad.
 
 ### 2.3) Compare la salida de objdump con hd, verifique donde fue colocado el programa dentro de la imagen.
 
@@ -86,7 +91,8 @@
 
 ### 2.6) ¿Para que se utiliza la opción --oformat binary en el linker?
 
----
+- Se utiliza para que el linker devuelva un archivo binario puro, sin el 
+wrapper de un archivo ELF, como es el caso para los ejecutables normales-
 
 ## 3) Desafío final: Modo protegido
 

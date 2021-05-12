@@ -35,7 +35,7 @@
 > * Actualizaciones de BIOS no autentificadas.
 > * BIOS desactualizadas con problemas de seguridad conocidos.
 > 
-> ![](/images/exploits.png)
+> ![](/png/exploits.png)
 
 
 ### 1.3) ¿Qué es Converged Security and Management Engine (CSME), the Intel Management Engine BIOS Extension (Intel MEBx)?
@@ -43,7 +43,7 @@
 > 
 > Tiene como objetivo implementar un entorno informático aislado del software principal (SW) que ejecuta la CPU, como el BIOS (sistema básico de entrada y salida), el sistema operativo (sistema operativo) y las aplicaciones.
 > 
-> ![](/images/CSME.png)
+> ![](/png/CSME.png)
 > 
 >El CSME cumple 3 funciones principales: Inicializacion de silicio, manejabilidad y seguridad. Esta ultima funcionalidad cumple una característica de seguridad que se ejecuta al inicio y es responsable de verificar y autenticar todo el firmware posterior. En otras palabras, proporciona opciones de configuración a nivel de plataforma para poder configurar el Management Engine (ME). Las opciones incluyen la activación y desactivación de funciones individuales y el ajuste de las configuraciones de energía.
 > En esencia, es la base de seguridad para verificar todos los procesos sensibles que realiza el chip.

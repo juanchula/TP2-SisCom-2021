@@ -2,11 +2,39 @@
 
 ### 1.1) ¿Qué es UEFI? ¿como puedo usarlo? Mencionar además una función a la que podría llamar usando esa dinámica.
 
-> UEFI (Unified Extensible Firmware Interface) es el remplazo de la BIOS. De modo simplificado, es una especificacion que define una interfaz entre el sistema operativo y el firmware. 
+> UEFI (Unified Extensible Firmware Interface) es el remplazo de la BIOS. Es una especificacion que define una interfaz entre el sistema operativo y el firmware. 
+> 
+> Ventajas con respecto a la BIOS:
+> * Compatibilidad y emulación del BIOS para los sistemas operativos solo compatibles con esta última.
+> * Soporte completo para la Tabla de particiones GUID (GPT), se pueden crear hasta 128 particiones por disco, con una capacidad total de 8 ZB.1​
+> * Capacidad de arranque desde unidades de almacenamiento grandes, dado que no sufren de las limitaciones del MBR.
+> * Independiente de la arquitectura y controladores de la CPU.
+> * Entorno amigable y flexible Pre-Sistema Operativo, incluyendo capacidades de red.
+> * Diseño modular.
+> 
+> Todos las computadores, de los ultimos años, vienen de fabrica con ella. Para acceder se debe precionar una tecla especifica al encender la computadora (normalmente F2 o suprimir). Entre las opciones se encuentra:
+> * Cambiar orden de boteo de las diferentes particiones.
+> * Habilitar el modo legacy (retrocompatibilidad con particiones MBR - de BIOS).
+> * Habilitar/Deshabilitar secure boot.
+> * Modificar opciones de seguridad (establecer contraseña entre otras cosas).
+> * Visualizar estadisticas.
 
 ### 1.2) ¿Menciona casos de bugs de UEFI que puedan ser explotados?
 
->Tema de claves privadas. Es muy grande
+> Debido a la gran cantidad de codigo de UEFI (en comparacion con BIOS) y a otras factores, han surgido varias vulnerabilidades desde su creacion.
+> 
+> Algunas de estas vulnerabilidades son:
+> * Bypass de Secure Boot.
+> * Escalada de privilegios de SMM.
+> * Implante de firmware UEFI.
+> * Implante persistente.
+> * Implante no persistente.
+> * Mala configuracion de la proteccion por parte del fabricante.
+> * Raíz de confianza no segura (puede verse comprometida desde el sistema operativo a través de sus interfaces de comunicación con el firmware como SMM).
+> * Dispositivos perifericos maliciosos (instalados en la etapa de produccio o entrega).
+> * Actualizaciones de BIOS malisiosas (sobretodo en actualizaciones remotas).
+> 
+> Tema de claves privadas. Es muy grande
 
 ### 1.3) ¿Qué es Converged Security and Management Engine (CSME), the Intel Management Engine BIOS Extension (Intel MEBx)?
 

@@ -118,6 +118,10 @@ CONFIG/SET PROTECTED MODE
         // .word 0x10000       /* Inicio de memoria del segmento de data 16-31 bit 1er DWord) */
 
         .byte 0x0           /* Direccion Base (0-7 2do DWord) */
+        
+        // /* 3.3) */
+        // .byte 0b10010000    /* (8-15 2do DWord). Tipo de segmento -> (8-12) ; Nivel de privilegio -> (13-14) ; Present flag -> (15) */
+        
         .byte 0b10010010    /* (8-15 2do DWord). Tipo de segmento -> (8-12) ; Nivel de privilegio -> (13-14) ; Present flag -> (15) */
         /*  bit 15    (1)  -> Flag de presencia en memoria. Lo establecemos en 1 porque esta presente.
             bit 13-14 (00) -> Nivel de privilegio requerido (0, 1, 2 o 3). Lo establecemos en 0.

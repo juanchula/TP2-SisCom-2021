@@ -98,7 +98,7 @@
 ## 3) Desafío final: Modo protegido
 
 ### 3.1) Crear un código assembler que pueda pasar a modo protegido (sin macros).
-
+> Ver ./02ModeProtected/main.S
 
 ### 3.2) ¿Cómo sería un programa que tenga dos descriptores de memoria diferentes, uno para cada segmento (código y datos) en espacios de memoria diferenciados? 
 

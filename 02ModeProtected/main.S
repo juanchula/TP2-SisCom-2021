@@ -90,6 +90,10 @@ CONFIG/SET PROTECTED MODE
     gdt_code:
         .word 0xffff        /* Limite de memoria del segmento de codigo (0-15 bit 1er DWord) */
         .word 0x0           /* Inicio de memoria del segmento de codigo (16-31 bit 1er DWord) */
+        /* 3.2) */
+        // .word 0xaaaa        /* Limite de memoria del segmento de data ((0-15 bit 1er DWord) */
+        // .word 0x0           /* Inicio de memoria del segmento de data 16-31 bit 1er DWord) */
+
         .byte 0x0           /* Direccion Base (0-7 2do DWord) */
         .byte 0b10011010    /* (8-15 2do DWord). Tipo de segmento -> (8-12) ; Nivel de privilegio -> (13-14) ; Present flag -> (15) */
         /*  bit 15    (1)  -> Flag de presencia en memoria. Lo establecemos en 1 porque esta presente.
@@ -110,9 +114,13 @@ CONFIG/SET PROTECTED MODE
         .byte 0x0           /* Direccion base (24-31). Es 0 porque arrancaremos desde 0 */
 
     /* Cargado del descriptor de data */
-    gdt_data:
+    gdt_data:        
         .word 0xffff        /* Limite de memoria del segmento de data ((0-15 bit 1er DWord) */
         .word 0x0           /* Inicio de memoria del segmento de data 16-31 bit 1er DWord) */
+        /* 3.2) */
+        // .word 0xffff        /* Limite de memoria del segmento de data ((0-15 bit 1er DWord) */
+        // .word 0xaaab           /* Inicio de memoria del segmento de data 16-31 bit 1er DWord) */
+
         .byte 0x0           /* Direccion Base (0-7 2do DWord) */
         .byte 0b10010010    /* (8-15 2do DWord). Tipo de segmento -> (8-12) ; Nivel de privilegio -> (13-14) ; Present flag -> (15) */
         /*  bit 15    (1)  -> Flag de presencia en memoria. Lo establecemos en 1 porque esta presente.
@@ -175,7 +183,7 @@ PROTECTED MODE
         mul %edx
         lea 0xb8000(%eax), %edx /* 0xb8000 == dirección de memoria de video mágica que se muestra en la pantalla. */
         mov $0x0f, %ah          /* Blanco sobre negro. */
-        
+
     loop:
         mov (%ecx), %al
         cmp $0, %al

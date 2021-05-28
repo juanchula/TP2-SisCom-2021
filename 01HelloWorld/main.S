@@ -1,3 +1,5 @@
+/* SOURCE: https://github.com/cirosantilli/x86-bare-metal-examples/ */
+
 /* 
 BEGIN (Limpieza de registros de proposito general)
 */
